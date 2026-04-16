@@ -3,6 +3,7 @@
     <head>
         <title>NoyanUk GDPS Homepage</title>
         
+        <link href="https://fonts.googleapis.com/css2?family=Libre+Barcode+39&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Rammetto+One&family=Changa+One&family=Figtree&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&display=swap" rel="stylesheet">
         
@@ -14,7 +15,7 @@
             
             body {
                 background: linear-gradient(#FFFF00, #00AAFF);
-                min-height: 100vh;
+                min-height: 120vh;
                 margin: 0;
                 padding: 0;
                 display: flex;
@@ -32,6 +33,7 @@
                 -webkit-background-clip: text;
                 background-clip: text;
                 color: transparent;
+                font-family: "Changa One", sans-serif;
             }
             
             .linkbutton {
@@ -55,7 +57,7 @@
             }
             
             #info {
-                background: linear-gradient(-135deg, #FFAA00, #FF5000);
+                background: linear-gradient(135deg, #FF0000, #FFAA00);
                 -webkit-background-clip: text;
                 background-clip: text;
                 color: transparent;
@@ -102,6 +104,24 @@
                 background: none;
                 color: #0075FF
             }
+            
+            #changeFontButton {
+                font-size: 16px;
+                background: radial-gradient(#808080, #505050);
+                padding: 5px;
+                cursor: pointer;
+                border-radius: 10px;
+            }
+            
+            .select {
+                background: radial-gadient(#909090, #202020);
+                border: none;
+                border-radius: 10px;
+                padding: 5px;
+                font-family: "Changa One", sans-serif;
+                cursor: pointer;
+                text-align: pointer;
+            }
         </style>
     </head>
     <body>
@@ -112,6 +132,18 @@
         
         <div class="main">
             <h1 class="container" id="gold">Welcome to NoyanUk GDPS!</h1>
+            
+            <p>Language:</p>
+            <select id="fontSelect" class="select">
+                <option value="default">Default</option>
+                <option value="spamtonese">Spamtonese</option>
+            </select>
+            
+            <p>
+                <button id="changeFontButton" onclick="changeFont()">
+                    Change Font
+                </button>
+            </p>
             
             <h2 id="info">Hi! Welcome to my brand new GDPS made by creators and players for users! We welcome any kind of people, nobody is different!</h2>
             
@@ -170,7 +202,7 @@
            
            <script>
                const image = document.getElementById("smguys");
-               count = 0;
+               let count = 0;
                
                image.addEventListener("click", function() {
                    count++;
@@ -189,6 +221,29 @@
                function copylink() {
                    navigator.clipboard.writeText("https://noyanuk.ps.fhgdps.com/")
                    alert("Copied link")
+               }
+               
+               function changeFont() {
+                   let fontpro = document.getElementById("fontSelect").value;
+                   let allElement = document.querySelectorAll("body, body *");
+                   
+                   if (fontpro === "default") {
+                       for (let i = 0; i < allElement.length; i++) {
+                           let el = allElement[i];
+                           el.style.fontFamily = '"Changa One", sans-serif';
+                           el.style.fontSize = "";
+                           el.style.letterSpacing = "";
+                        }
+                   } else {
+                       for (let i = 0; i < allElement.length; i++) {
+                           let el = allElement[i];
+                           if (el.tagName !== "IMG") {
+                               el.style.fontFamily = '"Libre Barcode 39", system-ui';
+                               el.style.fontSize = "20px";
+                               el.style.letterSpacing = "1px";
+                           }
+                       }
+                   }
                }
             </script>
         </footer>
