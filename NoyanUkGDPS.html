@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>NoyanUk GDPS Homepage</title>
+        
+        <link href="https://fonts.googleapis.com/css2?family=Rammetto+One&family=Changa+One&family=Figtree&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300..900&display=swap" rel="stylesheet">
+        
+        <style>
+            
+            body, button {
+                font-family: "Changa One", sans-serif;
+            }
+            
+            body {
+                background: linear-gradient(#FFFF00, #00AAFF);
+                min-height: 100vh;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .container {
+                background: linear-gradient(#00AAFF, #0050FF);
+                border-radius: 20px;
+                padding: 25px;
+            }
+            
+            .gradient-text {
+                background: linear-gradient(#FF00FF, #FFFF00);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+            }
+            
+            .linkbutton {
+                font-size: 16px;
+                background: radial-gradient(#505050, #101010);
+                border-radius: 8px;
+                padding: 10px;
+                border: none;
+                cursor: pointer;
+            }
+            
+            #gold {
+                color: #DFAA00;
+            }
+            
+            #grey {
+                background: linear-gradient(#505050, #000000);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+            }
+            
+            #info {
+                background: linear-gradient(-135deg, #FFAA00, #FF5000);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+            }
+            
+            #night {
+                background: linear-gradient(#505050, #101010);
+                -webkit-background-clip: text;
+                background-clip: text;
+;                color: transparent;
+            }
+            
+            header {
+                background: linear-gradient(135deg, #AACAFF, #5582FF);
+                text-align: center;
+                width: 100%;
+                padding: 20px;
+            }
+            
+            footer {
+                background-color: #505050;
+                color: #AAAAAA;
+                font-family: "Figtree", sans-serif;
+                width: 100%;
+                text-align: center;
+                padding: 20px;
+                margin: 0;
+            }
+            
+            .main {
+                flex: 1;
+                padding: 20px;
+            }
+            
+            .squish {
+                cursor: pointer;
+                transform-origin: bottom;
+                transition: transform 0.3s ease;
+                display: inline-block;
+            }
+            
+            #copybutton {
+                border: none;
+                background: none;
+                color: #0075FF
+            }
+        </style>
+    </head>
+    <body>
+        
+        <header>
+            <img src="https://i.ibb.co/d0RpMRKD/list-icon-1.png" alt="NoyanUk" width="128" height="width">
+        </header>
+        
+        <div class="main">
+            <h1 class="container" id="gold">Welcome to NoyanUk GDPS!</h1>
+            
+            <h2 id="info">Hi! Welcome to my brand new GDPS made by creators and players for users! We welcome any kind of people, nobody is different!</h2>
+            
+            <h3 id="grey">Links:</h3>
+            
+            <p id="night">Discord:</p>
+            <a href="https://discord.gg/RRWUeDjXn">
+                <button class="linkbutton">
+                    <span class="gradient-text">Join</span>
+                </button>
+            </a>
+            
+            <p id="night">Dashboard:</p>
+            <a href="https://noyanuk.ps.fhgdps.com/dashboard/">
+                <button class="linkbutton">
+                    <span class="gradient-text">Dashboard</span>
+                </button>
+            </a>
+            
+            <p id="night">Download:</p>
+            <a href="https://drive.google.com/file/d/121cgNcoxqdC3_N2IbXDF09fKcuc9tnF_/view?usp=drivesdk">
+                <button class="linkbutton">
+                    <span class="gradient-text">Download GDPS(Mobile)</span>
+                </button>
+            </a>
+            <p>
+                <a href="https://drive.google.com/file/d/1W7Mj6qtUFD9S7OZg_d4EeGy4Bvnbg1f4/view?usp=drivesdk">
+                    <button class="linkbutton">
+                        <span class="gradient-text">Download GDPS(PC/Laptoo)</span>
+                    </button>
+                </a>
+            </p>
+            
+            <p>GDPS Switch Link:</p>
+            <button id="copybutton" onclick="copylink()">https://noyanuk.ps.fhgdps.com/</button>
+        </div>
+        
+        
+        <footer>
+            <p>Made with:</p>
+            
+            <p>
+                <img src="https://cdn.freebiesupply.com/logos/large/2x/html-5-logo-png-transparent.png" alt="HTML" width="75" height="100">
+                <img src="https://brandslogos.com/wp-content/uploads/images/large/css-logo.png" alt="CSS" width="75" height="100">
+                <img src="https://www.freepnglogos.com/uploads/javascript-png/js-logo-png-5.png" alt="JS" width="75" height="80">
+            </p>
+            
+            <p>Webpage by:</p>
+            <p>SmguysGD</p>
+            
+            <h5>Thanks for visiting this webpage!</h5>
+           
+           <img src="https://i.ibb.co/pjLmyr0R/Untitled52-20260416115346.png" class="squish" id="smguys" alt="smguysGD" width="50" height="50">
+           
+           <h2 id="counter"></h2>
+           
+           <script>
+               const image = document.getElementById("smguys");
+               count = 0;
+               
+               image.addEventListener("click", function() {
+                   count++;
+                   document.getElementById("counter").innerHTML = `${count}`;
+                   image.style.transform = "scaleY(0.1)";
+                   image.style.transition = "none";
+                   
+                   void image.offsetHeight;
+                   
+                   setTimeout(() => {
+                       image.style.transition = "transform 0.375s ease";
+                       image.style.transform = "scaleY(1)";
+                   }, 10);
+               });
+               
+               function copylink() {
+                   navigator.clipboard.writeText("https://noyanuk.ps.fhgdps.com/")
+                   alert("Copied link")
+               }
+            </script>
+        </footer>
+    </body>
+</html>
